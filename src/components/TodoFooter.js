@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const todoStatus = [
   {
@@ -27,11 +26,12 @@ const TodoFooter = ({ remaining, handleTodoStatus }) => {
         {todoStatus.map(({ status, name }, index) => (
           <li
             key={index}
+            style={{ margin: "0 16px", cursor: "pointer" }}
             onClick={() => {
               handleTodoStatus(status);
             }}
           >
-            <Link>{name}</Link>
+            <span>{name}</span>
           </li>
         ))}
       </ul>

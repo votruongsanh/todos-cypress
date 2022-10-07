@@ -4,11 +4,12 @@ import TodoApp from "./components/TodoApp";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<TodoApp />} />
-      </Routes>
-    </BrowserRouter>
+    // <BrowserRouter>
+    //   <Routes>
+    //     <Route path="/" element={<TodoApp />} />
+    //   </Routes>
+    // </BrowserRouter>
+    <TodoApp />
   );
 }
 
