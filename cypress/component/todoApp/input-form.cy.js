@@ -3,6 +3,7 @@ import TodoApp from "../../../src/components/todos/TodoApp";
 describe("TodoApp.cy.js", () => {
   beforeEach(() => {
     cy.mount(<TodoApp />);
+    // cy.seedData();
   });
   it("mounts", () => {
     cy.focused().should("have.class", "new-todo");
@@ -28,7 +29,7 @@ describe("TodoApp.cy.js", () => {
       cy.get(".todo-list li").should("have.length", 1).and("contain", itemText);
     });
 
-    it.only("shows an error message on a failed submission", () => {
+    it("shows an error message on a failed submission", () => {
       cy.intercept("POST", "http://localhost:8000/todos", {
         statusCode: 500,
         body: {},

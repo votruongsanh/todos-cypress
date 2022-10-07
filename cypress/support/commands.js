@@ -23,3 +23,9 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("seedData", () => {
+  cy.intercept("GET", "http://localhost:8000/todos", {
+    fixture: "todos.json",
+  });
+});
