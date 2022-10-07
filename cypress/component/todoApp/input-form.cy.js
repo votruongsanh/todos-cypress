@@ -1,4 +1,4 @@
-import TodoApp from "../../src/components/TodoApp";
+import TodoApp from "../../../src/components/todos/TodoApp";
 
 describe("TodoApp.cy.js", () => {
   beforeEach(() => {

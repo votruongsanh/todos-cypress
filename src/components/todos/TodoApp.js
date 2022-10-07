@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import apis from "../lib/apis";
-import { filterTodos } from "../lib/utils";
+import apis from "../../lib/apis";
+import { filterTodos } from "../../lib/utils";
 import TodoFooter from "./TodoFooter";
 import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
