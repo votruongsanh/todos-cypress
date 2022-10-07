@@ -7,9 +7,6 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<TodoApp />} />
-        {/* <Route path="/all" element={<TodoApp />} />
-        <Route path="/active" element={<TodoApp />} />
-        <Route path="/complete" element={<TodoApp />} /> */}
       </Routes>
     </BrowserRouter>
   );

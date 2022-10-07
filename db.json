@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Buy Milk",
-      "isComplete": true
+      "isComplete": false
     },
     {
       "id": 3,

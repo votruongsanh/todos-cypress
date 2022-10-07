@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import apis from "../lib/apis";
 import { filterTodos } from "../lib/utils";
 import TodoFooter from "./TodoFooter";
@@ -63,7 +63,7 @@ const TodoApp = () => {
   };
 
   return (
-    <Fragment>
+    <>
       <header className="header">
         <h1>todos</h1>
         {error ? <span className="error">Oh no!</span> : null}
@@ -81,7 +81,7 @@ const TodoApp = () => {
         />
       </section>
       <TodoFooter remaining={remaining} handleTodoStatus={handleTodoStatus} />
-    </Fragment>
+    </>
   );
 };
 
