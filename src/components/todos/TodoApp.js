@@ -30,6 +30,7 @@ const TodoApp = () => {
       name: currentTodo,
       isComplete: false,
     };
+    // setTimeout(() => {
     apis
       .saveTodo(newTodo)
       .then(({ data }) => {
@@ -37,6 +38,7 @@ const TodoApp = () => {
         setCurrentTodo("");
       })
       .catch(() => setError(true));
+    // }, 4500);
   };
 
   const handleDelete = (id) => {

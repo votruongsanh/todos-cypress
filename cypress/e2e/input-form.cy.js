@@ -12,18 +12,18 @@ describe("Input form", () => {
   });
 
   context("Form submit", () => {
-    it("Add a new too on submit", () => {
+    it.only("Add a new too on submit", () => {
       const itemText = "Buy eggs";
+
       cy.intercept("POST", "http://localhost:8000/todos", {
         id: Date.now(),
         name: itemText,
         isComplete: false,
       }).as("createTodo");
 
-      cy.get(".new-todo")
-        .type(itemText)
-        .type("{enter}")
-        .should("have.value", "");
+      cy.get(".new-todo").type(itemText).type("{enter}").as("newTodo");
+
+      cy.get("@newTodo").should("have.value", "");
       cy.get(".todo-list li").should("have.length", 1).and("contain", itemText);
     });
 
