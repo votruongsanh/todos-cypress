@@ -53,13 +53,6 @@ const TodoApp = () => {
       isComplete: !targetTodo.isComplete,
     };
     apis.updateTodo(updatedTodo).then(({ data }) => {
-      // const targetIndex = todos.findIndex((t) => t.id === data.id);
-      // const newTodos = [
-      //   ...todos.slice(0, targetIndex),
-      //   data,
-      //   ...todos.slice(targetIndex + 1),
-      // ];
-
       const newTodos = todos.map((t) => (t.id === data.id ? data : t));
       setTodos(newTodos);
     });

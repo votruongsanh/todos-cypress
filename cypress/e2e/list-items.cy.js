@@ -1,9 +1,6 @@
-import TodoApp from "../../../src/components/todos/TodoApp";
-
 describe("List items", () => {
   beforeEach(() => {
-    cy.mount(<TodoApp />);
-    cy.seedData();
+    cy.seedAndVisit();
   });
 
   it("properly display completed items", () => {
@@ -30,7 +27,7 @@ describe("List items", () => {
     cy.get("@list").should("have.length", 3).and("not.contain", "Milk");
   });
 
-  it.only("Mark an incomplete item complete", () => {
+  it("Mark an incomplete item complete", () => {
     cy.fixture("todos").then((todos) => {
       const target = Cypress._.head(todos);
       cy.intercept(

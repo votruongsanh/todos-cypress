@@ -1,13 +1,11 @@
-import TodoApp from "../../../src/components/todos/TodoApp";
-
-describe("TodoApp.cy.js", () => {
+describe("Input form", () => {
   beforeEach(() => {
-    cy.mount(<TodoApp />);
-    // cy.seedData();
+    cy.seedAndVisit([]);
   });
-  it("mounts", () => {
+  it("focuses input on load", () => {
     cy.focused().should("have.class", "new-todo");
   });
+
   it("accept input", () => {
     const valueInput = "Buy Milk";
     cy.get(".new-todo").type(valueInput).should("have.value", valueInput);
