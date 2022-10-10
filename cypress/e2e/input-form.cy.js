@@ -23,6 +23,8 @@ describe("Input form", () => {
 
       cy.get(".new-todo").type(itemText).type("{enter}").as("newTodo");
 
+      cy.wait("@createTodo");
+
       cy.get("@newTodo").should("have.value", "");
       cy.get(".todo-list li").should("have.length", 1).and("contain", itemText);
     });
